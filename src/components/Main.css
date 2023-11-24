@@ -1,0 +1,25 @@
+/* Main.css */
+
+.carousel-container {
+    width: 80%;
+    /* Set a desired width */
+    margin: 0 auto;
+    /* Center the carousel horizontally */
+    /* Add more styling as needed */
+}
+
+.carousel-item img {
+    /* Custom styles for carousel images */
+    max-height: 400px;
+    /* Example: Limit the image height */
+    /* Add more styles as per your requirements */
+}
+
+/* Custom styles for carousel captions */
+.carousel-caption {
+    background-color: rgba(0, 0, 0, 0.5);
+    /* Example: Semi-transparent black background */
+    color: white;
+    /* Example: Text color for captions */
+    /* Add more styles as needed */
+}
