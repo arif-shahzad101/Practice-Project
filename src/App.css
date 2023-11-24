@@ -1,0 +1,89 @@
+/* Navbar styles */
+
+/* Navbar background color */
+.navbar {
+    background-color: #f8f9fa;
+    /* Set your desired background color */
+    display: flex;
+    /* Change to a flexbox layout */
+    justify-content: space-between;
+    /* Arrange items horizontally with space between them */
+    align-items: center;
+    /* Align items vertically in the center */
+    padding: 10px;
+    /* Add padding to adjust spacing */
+}
+
+
+
+/* Navbar brand link */
+.navbar-brand {
+    color: #f10000;
+    /* Set brand text color */
+    font-weight: bold;
+    font-size: 20px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-decoration: none;
+    /* Remove default underline */
+}
+
+/* Navbar links container */
+.navbar-nav {
+    display: flex;
+    /* Arrange links horizontally */
+    list-style: none;
+    /* Remove default list styling */
+    padding-left: 0;
+    /* Remove default list padding */
+    margin-bottom: 0;
+    /* Remove default margin */
+}
+
+/* Navbar links */
+.nav-item {
+    margin-right: 15px;
+    /* Adjust spacing between links */
+}
+
+.nav-link {
+    color: #6c757d;
+    /* Set default link text color */
+    text-decoration: none;
+    /* Remove default underline */
+}
+
+/* Active link */
+.nav-link.active {
+    color: #007bff;
+    /* Set active link text color */
+}
+
+/* Dropdown menu item hover */
+.dropdown-item:hover {
+    background-color: #e9ecef;
+    /* Set dropdown item hover background color */
+}
+
+/* Search input and button */
+.form-control {
+    width: 200px;
+    /* Set search input width */
+    margin-right: 10px;
+    /* Adjust spacing between search and button */
+}
+
+.btn-outline-success {
+    color: #28a745;
+    /* Set button text color */
+    border-color: #28a745;
+    /* Set button border color */
+}
+
+.btn-outline-success:hover {
+    color: #fff;
+    /* Set button text color on hover */
+    background-color: #28a745;
+    /* Set button background color on hover */
+    border-color: #28a745;
+    /* Set button border color on hover */
+}
