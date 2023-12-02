@@ -1,14 +1,21 @@
 import React from "react";
-import Navbar from "./components/Navbar";
-import Main from "./components/Main";
 import "./App.css";
 
 const App = () => {
   return (
-    <div>
-      <Navbar />
-      <Main />
-    </div>
+    <>
+      <nav>
+        <li>Home</li>
+        <li>About</li>
+        <li>Contact</li>
+      </nav>
+      <div className="container">
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Molestias
+        cumque ipsa explicabo repellat, voluptates autem asperiores, itaque a
+        nam doloremque quibusdam doloribus cum iusto animi veritatis dicta id
+        sunt et?
+      </div>
+    </>
   );
 };
 

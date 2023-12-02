@@ -56,7 +56,7 @@ const Main = () => {
               <div class="carousel-caption d-none d-md-block">
                 <h5>Third slide label</h5>
                 <p>
-                  Some representative placeholder aa content for the third
+                  Some representative placeholder aa  content for the third
                   slide.
                 </p>
               </div>
