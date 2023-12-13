@@ -20,6 +20,11 @@ export default function TextForm(props) {
     navigator.clipboard.writeText(text.value);
   };
 
+  const handleExtraSpaces = () => {
+    let newText = text.split(/\s+/);
+    setText(newText.join(" "));
+  };
+
   const handleOnChange = (event) => {
     // console.log("onchange  ");
     setText(event.target.value);
@@ -38,6 +43,9 @@ export default function TextForm(props) {
             onChange={handleOnChange}
             id="myBox"
             rows="8"
+            style={{
+              backgroundColor: props.mode === "dark" ? "#6c757d" : "white",
+            }}
           ></textarea>
           <button
             type="button"
@@ -67,6 +75,13 @@ export default function TextForm(props) {
             onClick={handleCopy}
           >
             Copy Text
+          </button>
+          <button
+            type="button"
+            className="btn btn-primary m-2"
+            onClick={handleExtraSpaces}
+          >
+            Remove Extra Spaces
           </button>
         </div>
       </div>
