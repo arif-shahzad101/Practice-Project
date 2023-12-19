@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import "./App.css";
 import Navbar from "./components/Navbar";
 import TextForm from "./components/TextForm";
-//import About from "./components/About";
+import About from "./components/About";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 const App = () => {
   const [mode, setMode] = useState("light"); //whether dark or light
@@ -16,13 +17,22 @@ const App = () => {
     }
   };
   return (
-    <>
-      <Navbar title="Text Converter" mode={mode} togglemode={toggleMode} />
-      <div className="container my-3">
-        <TextForm heading="Enter the text to analyze below" mode={mode} />
-        {/*<About /> */}
-      </div>
-    </>
+    <BrowserRouter>
+      <>
+        <Navbar title="Text Converter" mode={mode} togglemode={toggleMode} />
+        <div className="container my-3">
+          <Routes>
+            <Route
+              path="/"
+              element={
+                <TextForm heading="Enter your text to analyse" mode={mode} />
+              }
+            />
+            <Route path="about" element={<About />} />
+          </Routes>
+        </div>
+      </>
+    </BrowserRouter>
   );
 };
 
