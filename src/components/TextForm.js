@@ -5,10 +5,12 @@ export default function TextForm(props) {
     // console.log("uppercase was clicked" + text);
     let newText = text.toUpperCase();
     setText(newText);
+    props.showAlert("Converted to uppercase", "success");
   };
   const handleLoClick = () => {
     let newText = text.toLowerCase();
     setText(newText);
+    props.showAlert("Converted to lowercase", "success");
   };
   const handleClearClick = () => {
     let newText = "";
@@ -18,11 +20,13 @@ export default function TextForm(props) {
     var text = document.getElementById("myBox");
     text.setSelectionRange(0, 999);
     navigator.clipboard.writeText(text.value);
+    props.showAlert("Text Copied ", "success");
   };
 
   const handleExtraSpaces = () => {
     let newText = text.split(/\s+/);
     setText(newText.join(" "));
+    props.showAlert("Removed Extra Spaces", "success");
   };
 
   const handleOnChange = (event) => {
@@ -34,17 +38,23 @@ export default function TextForm(props) {
   return (
     <>
       <div>
-        <div className="mb-3">
+        <div
+          className="container mb-3"
+          style={{
+            color: props.mode === "dark" ? "white" : "black",
+          }}
+        >
           <h1>{props.heading}</h1>
           <textarea
             className="form-control"
-            placeholder="Enter text here"
+            placeholder="Enter Text Here"
             value={text}
             onChange={handleOnChange}
             id="myBox"
             rows="8"
             style={{
-              backgroundColor: props.mode === "dark" ? "#6c757d" : "white",
+              backgroundColor: props.mode === "dark" ? "#343c43" : "white",
+              color: props.mode === "dark" ? "white" : "black",
             }}
           ></textarea>
           <button
@@ -85,13 +95,27 @@ export default function TextForm(props) {
           </button>
         </div>
       </div>
-      <div className="container my-3">
+      <div
+        className="container my-3"
+        style={{
+          color: props.mode === "dark" ? "white" : "black",
+        }}
+      >
         <h1>Your text Summary</h1>
         <p>
-          {text.split(" ").length} words and {text.length} characters
+          {text.trim().length === 0
+            ? "No text entered"
+            : `${text.trim().split(/\s+/).length} words and ${
+                text.length
+              } characters`}
         </p>
+
         <h1>Preview</h1>
-        <p>{text}</p>
+        <p>
+          {text.length > 0
+            ? text
+            : "Enter something in above textbox to preview it here"}
+        </p>
       </div>
     </>
   );
