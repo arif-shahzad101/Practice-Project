@@ -4,6 +4,7 @@ import Navbar from "./components/Navbar";
 import TextForm from "./components/TextForm";
 import Alert from "./components/Alert";
 import About from "./components/About";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 const App = () => {
   const [mode, setMode] = useState("light"); //whether dark or light
@@ -33,15 +34,26 @@ const App = () => {
   };
 
   return (
-    <>
-      <Navbar title="Text Converter" mode={mode} togglemode={toggleMode} />
-      <Alert alert={alert} />
-
-      <div className="container my-3">
-        <TextForm heading="Enter the text to analyze below" mode={mode} />
-        <About />
-      </div>
-    </>
+    <BrowserRouter>
+      <>
+        <Navbar title="Text Converter" mode={mode} togglemode={toggleMode} />
+        <Alert alert={alert} />
+        <div className="container my-3">
+          <Routes>
+            <Route path="/about" element={<About />} />
+            <Route
+              path="/"
+              element={
+                <TextForm
+                  heading="Enter the text to analyze below"
+                  mode={mode}
+                />
+              }
+            />
+          </Routes>
+        </div>
+      </>
+    </BrowserRouter>
   );
 };
 
