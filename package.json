@@ -1,22 +1,21 @@
 {
   "name": "practice",
-  "homepage" : "https://arif-shahzad101.github.io/Practice-Project",
+  "homepage": "https://arif-shahzad101.github.io/Practice-Project",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
     "bootstrap": "^5.3.2",
-    "gh-pages": "^6.1.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.21.0",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "predeploy" : "npm run build", 
-    "deploy": "gh-pages -d build", 
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
@@ -44,6 +43,7 @@
     "@babel/core": "^7.23.6",
     "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
     "@babel/preset-react": "^7.23.3",
+    "gh-pages": "^6.1.0",
     "react-scripts": "^5.0.1"
   }
 }
